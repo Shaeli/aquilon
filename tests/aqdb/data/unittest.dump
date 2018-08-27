@@ -59,6 +59,7 @@ DnsDomain(name="ms.com")
 DnsDomain(name="msad.ms.com", restricted=True)
 DnsDomain(name="one-nyp.ms.com")
 DnsDomain(name="new-york.ms.com")
+DnsDomain(name="dev")
 
 User(name="otheruser", uid=1001, gid=1001, full_name="Other user", home_dir="/tmp")
 User(name="orphantestuser", uid=1002, gid=1002, full_name="Other user to delete", home_dir="/tmp")

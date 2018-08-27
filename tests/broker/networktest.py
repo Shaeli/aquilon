@@ -162,7 +162,7 @@ class NetworkInfo(object):
 
         first_usable = max(offsets or [4]) + 1
         self.usable = IPGenerator(self, first_usable)
-
+        
     def __getattr__(self, name):
         # Proxy lookups to the wrapped network object
         if "_network" not in self.__dict__:
@@ -289,7 +289,7 @@ class DummyNetworks(object):
     def allocate_network(self, testsuite, name, prefixlength, network_type,
                          loc_type, loc_name, side='a', comments=None):
         if prefixlength not in SUBNET_RANGE:
-            raise ValueError("There's no address range defined for /%d networks"
+            raise ValueError("There's no address range defined for /%s networks"
                              % prefixlength)
         if name in self.networks:
             raise ValueError("There's already a network named %s" % name)
@@ -318,7 +318,7 @@ class DummyNetworks(object):
         testsuite.noouttest(command)
 
         with open(statefile, "wb") as f:
-            pickle.dump(result, f)
+            pickle.dump(result, f, -1)
 
         self.networks[name] = result
 
